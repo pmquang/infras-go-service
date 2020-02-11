@@ -12,8 +12,8 @@ pipeline {
     SERVICE_NAME = "infras-go-service"
     COMPONENT = "backend"
     VERSION = sh(script: """cat ./VERSION | tail -1""", returnStdout: true).trim()
-    BUILD_IMAGE = "${env.DOCKER_REGISTRY}/${env.COMPONENT}/${env.SERVICE_NAME}:build-base"
-    SERVICE_IMAGE = "${env.DOCKER_REGISTRY}/${env.COMPONENT}/${env.SERVICE_NAME}:${env.VERSION}"
+    BUILD_IMAGE = "${env.COMPONENT}/${env.SERVICE_NAME}:build-base"
+    SERVICE_IMAGE = "${env.COMPONENT}/${env.SERVICE_NAME}:${env.VERSION}"
 
   }
 

@@ -8,8 +8,7 @@ ENV CGO_ENABLED 0
 WORKDIR /root/project
 COPY go.mod go.sum ./
 
-RUN apk add --no-cache --virtual .git-deps openssh-client git \
- && ssh-keyscan github.com > /root/.ssh/known_hosts \
+RUN apk add --no-cache openssh-client git \
  && go mod download
 
 FROM build-base AS builder
