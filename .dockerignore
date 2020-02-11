@@ -1,0 +1,9 @@
+### Docker template.
+Dockerfile
+.dockerignore
+
+### Git template.
+.git/
+
+### CI/CD template.
+Jenkinsfile
